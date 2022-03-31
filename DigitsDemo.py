@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from sklearn import datasets #Pre-made data set to learn on from sklearn library
 from sklearn.model_selection import train_test_split #Split training and test data
 from sklearn.neural_network import MLPClassifier #Create neural network for classifier
-from sklearn.metrics import accuracy_score #Find accuracy of model
+from sklearn.metrics import accuracy_score, classification_report #Find accuracy of model
 
 digits = datasets.load_digits()
 #Digits contains 8x8 arrays of varying gradient squares
@@ -71,5 +71,6 @@ accuracy = float(accuracy_score(y_test, predictions))
 accuracypercent = round((accuracy * 100),2)
 print()
 print('The model correctly predicted digits with '+ str(accuracypercent) +'% accuracy')
+print(classification_report(y_test,predictions))
 
 
